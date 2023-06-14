@@ -175,7 +175,7 @@ function(input, output, session) {
     order=do.call(paste,sequences)
     results=data.frame(order[1:(length(order)/2)],results[,c(2,4,6,7)])
     colnames(results)=c("order of treatments","nr.switches","costs","RE fixed number of clusters","RE budgetary constraint")  # column names in results matrix 
-    datatable(results,rownames=FALSE, options = list(pageLength = 0.5*2^nr.per,dom = 'tl'))
+    datatable(results,rownames=FALSE, options = list(pageLength = 0.5*2^nr.per,dom = 'tl',order=list(2, 'des')))
   })
   
 }
