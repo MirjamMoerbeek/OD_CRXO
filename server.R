@@ -49,8 +49,8 @@ function(input, output, session) {
       results[ii,]=(c(nr.per,var.gamma1[nr.per+1,nr.per+1],costs*2*N,var.gamma2[nr.per+1,nr.per+1],NA,NA))
     }
     
-    results[min.nr.per:max.nr.per,5]=min(results[min.nr.per:max.nr.per,2])/results[min.nr.per:max.nr.per,2]   # RE given fixed number of clusters
-    results[min.nr.per:max.nr.per,6]=min(results[min.nr.per:max.nr.per,4])/results[min.nr.per:max.nr.per,4]   # RE given budgetary constraint
+    results[min.nr.per:max.nr.per,5]=round(min(results[min.nr.per:max.nr.per,2])/results[min.nr.per:max.nr.per,2],3)   # RE given fixed number of clusters
+    results[min.nr.per:max.nr.per,6]=round(min(results[min.nr.per:max.nr.per,4])/results[min.nr.per:max.nr.per,4],3)   # RE given budgetary constraint
     colnames(results)=c("nr.per","variance 1","costs","variance 2","RE 1","RE 2")                             # column names in results matrix 
 
     results=as.data.frame(results)
